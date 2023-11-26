@@ -1,5 +1,3 @@
-package unitTests;
-
 import org.junit.Test;
 
 public class DayOfWeekUtilityGetDayOfWeekNextYearJUnitTest {
