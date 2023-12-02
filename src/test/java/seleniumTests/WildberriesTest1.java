@@ -12,7 +12,7 @@ public class WildberriesTest1 {
 
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Устанавливаем время ожидания в 10 секунд
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         driver.manage().window().maximize();
         driver.get("https://www.wildberries.by");
