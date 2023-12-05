@@ -20,8 +20,7 @@ public class HomePage {
     public static final String ADULTS = "//input[@id='group_adults']/following-sibling::div[2]/button[2]";
     public static final String ROOMS_MENU = "//input[@id='no_rooms']/following-sibling::div[2]/button[2]";
     public static final String SUBMIT_BTN = "//button[@type='submit']";
-    public static final String SPINNER = "[data-testid='overlay-card'";
-    public static final String HOTEL_PICTURE = "//div[@data-testid='property-card'][1]//a[1]";
+
 
     private WebDriver driver;
     private WebDriverWait wait;
@@ -52,9 +51,10 @@ public class HomePage {
         }
     }
 
-    public void selectDestination(String destinationName) {
+    public void selectDestination(String destinationName) throws InterruptedException {
         driver.findElement(By.cssSelector(DESTINATION_PLACE)).sendKeys(destinationName);
-        driver.findElement(By.cssSelector(FIRST_FOUND_DESTINATION_PLACE)).click();
+        Thread.sleep(3000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(FIRST_FOUND_DESTINATION_PLACE))).click();
     }
 
     public void selectDate(LocalDate date) {
@@ -73,5 +73,8 @@ public class HomePage {
         driver.findElement(By.xpath(ROOMS_MENU)).click();
     }
 
-
+    public void clickFindBtn() {
+        driver.findElement(By.xpath(SUBMIT_BTN)).click();
+        //Add hotel page is displayed
+    }
 }
