@@ -12,6 +12,7 @@ public class HotelsPage {
 
     public static final String SPINNER = "[data-testid='overlay-card'";
     public static final String HOTEL_PICTURE = "//div[@data-testid='property-card'][1]//a[1]";
+    public static final String HIGHEST_ESTIMATE = "[aria-label='Оценка превосходно'";
 
     private WebDriver driver;
     private WebDriverWait wait;
@@ -36,7 +37,7 @@ public class HotelsPage {
 
     public void getHotelEstimate() {
         try {
-            wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector("[aria-label='Оценка превосходно'"))));
+            wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(HIGHEST_ESTIMATE))));
         } catch (NotFoundException e) {
             throw new NotFoundException(e.getMessage());
         }
