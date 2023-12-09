@@ -1,0 +1,7 @@
+name: YAML Test Suite
+parallel: classes
+threadCount: 1
+tests:
+  - name: Booking Test
+    classes:
+      - tests.BookingTest

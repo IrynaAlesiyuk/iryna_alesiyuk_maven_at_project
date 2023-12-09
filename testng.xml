@@ -4,7 +4,7 @@
 <suite name="Suite1" verbose="1">
     <test name="XML TestNG suite">
         <classes>
-            <class name="tests.BookingTestRef"/>
+            <class name="tests.BookingTest"/>
         </classes>
     </test>
 </suite>

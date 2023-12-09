@@ -3,7 +3,7 @@ package driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class WebDriverManager {
+public class DriverInit {
 
     public static WebDriver driver;
 
