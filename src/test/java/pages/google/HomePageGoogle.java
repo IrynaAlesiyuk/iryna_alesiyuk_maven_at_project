@@ -1,6 +1,7 @@
 package pages.google;
 
 import driver.DriverInit;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.util.Arrays;
 import java.util.List;
 
+@Log4j2
 public class HomePageGoogle {
 
     public static final String ACCEPT_ALL_BTN = "(//div[contains(text(), 'Принять все')])[2]";
@@ -23,7 +25,8 @@ public class HomePageGoogle {
     }
 
     public void acceptAll() {
-             driver.findElement(By.xpath(ACCEPT_ALL_BTN)).click();
+        log.info("Accept cookies");
+        driver.findElement(By.xpath(ACCEPT_ALL_BTN)).click();
 //        try {
 //            WebElement cookies = new WebDriverWait(driver, Duration.ofSeconds(15))
 //                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath(ACCEPT_ALL_BTN)));
@@ -36,6 +39,7 @@ public class HomePageGoogle {
 
     public void pastedCopiedTextIntoSearchField() {
         WebElement searchField = driver.findElement(By.name(SEARCH_FIELD_BY_NAME));
+        log.info("Paste copied text into Search field");
         new Actions(driver)
                 .click(searchField)
                 .keyDown(Keys.LEFT_CONTROL)
@@ -56,6 +60,7 @@ public class HomePageGoogle {
                     ));
                     return !elements.isEmpty();
                 });
+        log.info("Check if Tutorial search input is dislayed: {}", isAnyTextPresent);
         return isAnyTextPresent;
     }
 }

@@ -13,7 +13,7 @@ public class DayOfWeekUtilityGetDayOfWeekJUnitTest {
 
     @Test
     public void validEqualToSeven() {
-    //    String actual = DayOfWeekUtility.getDayOfWeek(7);
+        //    String actual = DayOfWeekUtility.getDayOfWeek(7);
     //    Assert.assertEquals(actual, "Sunday");
     }
 
