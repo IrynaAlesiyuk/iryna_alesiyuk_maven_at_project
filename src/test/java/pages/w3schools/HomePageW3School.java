@@ -35,7 +35,6 @@ public class HomePageW3School {
     public void acceptAll() {
         log.info("Accept ccokies");
         driver.findElement(By.cssSelector(ACCEPT_BTN)).click();
-
     }
 
 }
